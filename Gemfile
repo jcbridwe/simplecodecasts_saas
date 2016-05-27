@@ -9,6 +9,8 @@ gem 'sqlite3', group: [:development, :test]
 gem 'bootstrap-sass', '3.3.1'
 gem 'bootswatch-rails'
 # Use bootstrap library for styles
+gem 'font-awesome-sass', '4.2.0'
+# Use font-awesome library
 group :production do
   gem 'pg'
   gem 'rails_12factor'
