@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/custom.css.scss">
   <! link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" -->
 </head>
 <body>
@@ -24,9 +25,10 @@
     </div>
     
     <div class="collapse navbar-collapse" id="main-nav-collapse">
-      <ul class="nav nvabar-nav navbar-right">
+      <ol class="nav nvabar-nav navbar-right">
         <li><%= link_to "About", about_path %></li>
-      </ul>
+        <li><%= link_to "Contact Us", new_contact_path %></li>
+      </ol>
     </div><! /.navbar-collapse -->
   </div>  
 </nav>
