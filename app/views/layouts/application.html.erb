@@ -3,38 +3,60 @@
 <head>
   <title>Dev Match</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" type="text/css" href="./stylesheets/custom.css.scss">
-  <! link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" -->
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-static-top gradient" role="navigation">
-  <div class='container'>
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to root_path, class: 'navbar-brand' do %>
-        <i class="fa fa-ioxhost"></i>
-        Dev Match
-      <% end %>
-    </div>
+<!--<nav class="navbar navbar-inverse navbar-static-top gradient" role="navigation">-->
+<!--  <div class='container'>-->
+<!--    <div class="navbar-header">-->
+<!--      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">-->
+<!--        <span class="sr-only">Toggle navigation</span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--      </button>-->
+<!--      <%= link_to root_path, class: 'navbar-brand' do %>-->
+<!--        <i class="fa fa-ioxhost"></i>-->
+<!--        Dev Match-->
+<!--      <% end %>-->
+<!--    </div>-->
     
-    <div class="collapse navbar-collapse" id="main-nav-collapse">
-      <ol class="nav nvabar-nav navbar-right">
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Contact Us", new_contact_path %></li>
-      </ol>
-    </div><! /.navbar-collapse -->
-  </div>  
-</nav>
+<!--    <div class="collapse navbar-collapse" id="main-nav-collapse">-->
+<!--      <ul class="nav nvabar-nav navbar-right" style>-->
+<!--        <li><%= link_to "About", about_path %></li>-->
+<!--        <li><%= link_to "Contact Us", new_contact_path %></li> -->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>  -->
+<!--</nav>-->
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <%= link_to root_path, class: 'navbar-brand' do %>
+              <i class="fa fa-ioxhost"></i>
+                Dev Match
+                <% end %>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Page</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "About", about_path %></li>
+              <li><%= link_to "Contact Us", new_contact_path %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
 <div class="container">
   <%= yield %>
 </div>
-<!script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"--><!/script-->
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
