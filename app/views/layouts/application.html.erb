@@ -6,29 +6,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!--<nav class="navbar navbar-inverse navbar-static-top gradient" role="navigation">-->
-<!--  <div class='container'>-->
-<!--    <div class="navbar-header">-->
-<!--      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">-->
-<!--        <span class="sr-only">Toggle navigation</span>-->
-<!--        <span class="icon-bar"></span>-->
-<!--        <span class="icon-bar"></span>-->
-<!--        <span class="icon-bar"></span>-->
-<!--      </button>-->
-<!--      <%= link_to root_path, class: 'navbar-brand' do %>-->
-<!--        <i class="fa fa-ioxhost"></i>-->
-<!--        Dev Match-->
-<!--      <% end %>-->
-<!--    </div>-->
-    
-<!--    <div class="collapse navbar-collapse" id="main-nav-collapse">-->
-<!--      <ul class="nav nvabar-nav navbar-right" style>-->
-<!--        <li><%= link_to "About", about_path %></li>-->
-<!--        <li><%= link_to "Contact Us", new_contact_path %></li> -->
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </div>  -->
-<!--</nav>-->
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -44,9 +21,14 @@
                 <% end %>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="#">Page</a></li>
-            </ul>
+            <div class="nav navbar-nav navbar-right" style="margin: 1px">
+              <% if current_user %>
+                <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
+              <% else %>
+                <%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
+                <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success navbar-btn', method: :get %>
+              <% end %>
+            </div>
             <ul class="nav navbar-nav navbar-right">
               <li><%= link_to "About", about_path %></li>
               <li><%= link_to "Contact Us", new_contact_path %></li>
