@@ -27,18 +27,15 @@ $(document).ready(function() {
   
   function stripeResponseHandler(status, response) {
     // Get a reference to the form:
-    var $f = $("#payment-form");
-    if (response.error) {
-      // Show the errors on the form
-      $f.find('.payment-errors').text(response.error.message);
-      $f.find('button').prop('disabled', false);
-    } else {
-      // response contains id and card, which contains additional card details
-      var token = response.id;
-      // Insert the token into the form so it gets submitted to the server
-      $f.append($('<input type="hidden" name="stripeToken" />').val(token));
-      // and submit
-      $f.get(0).submit();
-    }
+    var f = $("#new_user");
+
+    // Get the token from the response:
+    var token = response.id;
+
+    // Add the token to the form:
+    f.append('<input type="hidden" name="user[stripe_card_token]" value="' + token + '" />');
+
+    // Submit the form:
+    f.get(0).submit(); 
   }
 });
