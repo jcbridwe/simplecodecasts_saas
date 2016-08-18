@@ -1,6 +1,8 @@
 /*global $*/
 /*global $f*/
 /*global Stripe*/
+/*global response*/
+//app/assets/javascripts/users.js
 $(document).ready(function() {
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
   // Watch for a form submission:
@@ -39,3 +41,4 @@ $(document).ready(function() {
     f.get(0).submit(); 
   }
 });
+
