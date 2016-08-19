@@ -12,6 +12,7 @@ body { padding-top: 60px; }
 // And finally bootswatch style itself
 @import "bootswatch/cerulean/bootswatch";
 
+
 // Whatever application styles you have go last
 //@import "base";
 
@@ -24,4 +25,8 @@ body {
 #main-nav-collapse {
     display: inline;
 }
-
+.alert {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
