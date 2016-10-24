@@ -40,7 +40,7 @@ gem 'spring', group: :development
 gem 'devise', '3.4.1'
 
 # Use Stripe to handle user payments 
-gem 'stripe', '1.16.1'
+gem 'stripe', '1.16'
 
 # Use figaro to secure configuration data
 gem 'figaro', '1.0.0'
